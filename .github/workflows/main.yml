@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: github-markdown-to-notion-db
-        uses: vdubois/github-markdown-to-notion-db@54bb95aab47ddbe148ad77a2e5f6bab411e73df0
+        uses: vdubois/github-markdown-to-notion-db@e6ca7223bda8954fa0e150ef6841d08086a71c4a
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
