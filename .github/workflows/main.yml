@@ -9,16 +9,14 @@ on:
       - './README.md'
 
 jobs:
-  push_markdown_job:
+  sync:
+    name: Sync
     runs-on: ubuntu-latest
-    name: Push Markdown to Notion
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-      - name: Push Markdown to Notion
-        uses: JoshStern/push-md-to-notion@v0.2
-        id: push_markdown
-        with:
-          notion-token: ${{ secrets.NOTION_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: Gallery Fake
+        uses: litencatt/gallery-fake@v0.4.0
+        env:
+          NOTION_API_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
+          GITHUB_MD_PATH: "docs"
